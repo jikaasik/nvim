@@ -17,7 +17,9 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-jedi'
 Plug 'dense-analysis/ale'
 Plug 'jpalardy/vim-slime'
-
+Plug 'eigenfoo/stan-vim'
+Plug 'Yggdroot/indentline'
+Plug 'vim-test/vim-test'
 call plug#end()
 
 " Ale linting
@@ -41,6 +43,12 @@ set tabstop=4 softtabstop=4
 set noerrorbells
 set smartcase
 set colorcolumn=80
+set clipboard=unnamed
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set smartindent
+autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+" vim-test bindings
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-a> :TestSuite<CR>
+nmap <silent> t<C-f> :TestFile<CR>
